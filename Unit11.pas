@@ -1,0 +1,182 @@
+unit Unit11;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.Menus, shellAPI;
+
+type
+  TForm11 = class(TForm)
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
+    SpeedButton1: TSpeedButton;
+    Label3: TLabel;
+    Label4: TLabel;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form11: TForm11;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1;
+
+var
+  f: Text;
+  s: string;
+  Nvern, ball, TotalQuestions, percentage: integer;
+
+procedure TForm11.FormActivate(Sender: TObject);
+begin
+if form11.visible then
+label1.Caption:='              ПРЕДЛАГАЮ ПРОЙТИ ТЕСТ ДЛЯ' +#13+ '        САМОКОНТРОЛЯ ПОЛУЧЕННЫХ ЗНАНИЙ';
+label2.Caption:='Итак, определимся с уровнем сложности, насколько хорошо Вы усвоили материал?';
+end;
+
+procedure TForm11.FormCreate(Sender: TObject);
+begin
+RadioGroup1.ParentColor := False;
+RadioGroup1.Font.Color := RGB(255,255,255);
+end;
+
+procedure TForm11.N1Click(Sender: TObject);
+begin
+ShellExecute(0, PChar ('Open'), PChar ('Справка.chm'), nil, nil, SW_SHOW);
+end;
+
+procedure TForm11.N2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm11.RadioGroup1Click(Sender: TObject);
+begin
+  RadioGroup1.Enabled := false; // Выбор варианта становится недоступен
+  RadioGroup2.Enabled := true; // Доступным становится поле с вопросом
+  SpeedButton1.Enabled := true; // Кнопка Далее
+
+  case RadioGroup1.ItemIndex of
+    // В зависимости от выбранного варианта переменная f
+    0: AssignFile(f, 'easy.txt'); // связывается с разными файлами
+    1: AssignFile(f, 'medium.txt');
+    2: AssignFile(f, 'hard.txt');
+  end;
+  reset(f); // Открываем файл для чтения
+  readln(f, s); // Считываем первую строку из файла
+  ball := 0; // изначально количество баллов 0
+  totalQuestions := 0; // изначально количество вопросов 0
+  repeat
+    if (s[1] = '-') then
+    begin
+      // Если первый символ строки ‘-’ значит это вопрос
+      delete(s, 1, 1);
+      RadioGroup2.Caption := s;
+    end
+    else if s[1] = '*' then
+    begin
+      // Если первый символ ‘*’ значит это номер верного ответа
+      delete(s, 1, 1);
+      Nvern := StrToInt(s);
+    end
+    else
+      RadioGroup2.Items.Add(s); // Иначе это вариант ответа
+    readln(f, s); // Считываем следующую строку из файла
+  until (s[1] = '-') or Eof(f); // Считывание и отправление вариантов ответов в RadiGroup до тех пор
+  // пока не достигнут следующий вопрос или конец файла
+end;
+
+procedure TForm11.SpeedButton1Click(Sender: TObject);
+begin
+  if (RadioGroup2.ItemIndex > -1) and (not Eof(f)) then
+  begin
+    totalQuestions := totalQuestions + 1; // Увеличиваем общее количество вопросов
+    // Если выбранный вариант соответствует номеру верного ответа, то балл прибавляется
+    if RadioGroup2.ItemIndex = Nvern - 1 then
+    begin
+      ball := ball + 1;
+      Label3.Caption := 'Верно!';
+    end
+    else
+    begin
+      Label3.Caption := 'Неверно';
+    end;
+    RadioGroup2.Items.Clear; // Очищается поле для следующего вопроса
+    repeat
+      if (s[1] = '-') then
+      begin
+        delete(s, 1, 1);
+        RadioGroup2.Caption := s;
+      end
+      else if s[1] = '*' then
+      begin
+        delete(s, 1, 1);
+        Nvern := StrToInt(s);
+      end
+      else
+        RadioGroup2.Items.Add(s);
+      readln(f, s);
+    until (s[1] = '-') or Eof(f);
+  end
+  // Если конец файла достигнут, значит вопросы закончились
+  else if Eof(f) then
+  begin
+    delete(s, 1, 1);
+    Nvern := StrToInt(s);
+    totalQuestions := totalQuestions + 1; // Увеличиваем общее количество вопросов
+    if RadioGroup2.ItemIndex = Nvern - 1 then
+    begin
+      ball := ball + 1;
+      Label3.Caption := 'Верно!';
+    end
+    else
+    begin
+      Label3.Caption := 'Неверно';
+    end;
+    // Вычисляем процент правильных ответов
+    Label4.Caption := Label4.Caption + Format('. Ваш результат: %d%% правильных ответов', [Round(ball / totalQuestions * 100)]);
+    CloseFile(f);
+  end;
+end;
+
+
+procedure TForm11.SpeedButton2Click(Sender: TObject);
+begin
+RadioGroup1.ItemIndex:=-1;
+RadioGroup1.Enabled:=true;
+RadioGroup2.Enabled:=false;
+RadioGroup2.Items.Clear;
+label4.Caption:='';
+RadioGroup2.Caption:='Вопросы';
+end;
+
+procedure TForm11.SpeedButton3Click(Sender: TObject);
+begin
+form11.hide;
+form1.show;
+end;
+
+end.

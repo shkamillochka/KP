@@ -1,0 +1,69 @@
+unit Unit6;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm6 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2, Unit5, Unit7;
+
+procedure TForm6.FormActivate(Sender: TObject);
+begin
+if Form6.Visible then
+Label2.Caption:='Популярный российский' + #13 +  'певец и рэп исполнитель';
+Label4.Caption:='В  апреле 2017-го появился сингл'+#13+'с названием 1000 Freestyle, созданный с'+#13+'MATX. Но появлению интереса к нему'+#13+'во многом поспособствовал его друг' +#13+ 'Федук, который направил OG Buda.'+#13+'После этого армия поклонников'+#13+'Григория стала заметно расти, и'+#13+'вскоре он выпустил много треков,'+#13+'в числе которых Tourlife. Уже в'+#13+'2018-м  состоялось  знакомство  с'+#13+'Платиной, переросшее в сотрудничество.'+#13+'Записали мини-сборник «Сладких снов»'+#13+'Следующий год ознаменовался'+#13+'выпуском дебютного студийного'+#13+'альбома исполнителя под названием'+#13+'«ОПГ Сити». В честь этого была'+#13+'сделана фотосессия в стиле'+#13+'криминальных группировок 90-х,'+#13+'в которой OG Buda был с друзьями.';
+label5.Caption:='САМЫЙ ПОПУЛЯРНЫЙ' +#13+ '              ТРЕК';
+end;
+
+procedure TForm6.SpeedButton1Click(Sender: TObject);
+begin
+form5.show;
+form6.hide;
+end;
+
+procedure TForm6.SpeedButton2Click(Sender: TObject);
+begin
+form7.show;
+form6.hide;
+end;
+
+procedure TForm6.SpeedButton3Click(Sender: TObject);
+begin
+form6.hide;
+form2.show;
+end;
+
+end.

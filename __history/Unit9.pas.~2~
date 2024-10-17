@@ -1,0 +1,46 @@
+unit Unit9;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm9 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form9: TForm9;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm9.FormActivate(Sender: TObject);
+begin
+if Form9.Visible then
+Label2.Caption:='Популярный российский' + #13 +  'певец и рэп исполнитель';
+Label4.Caption:='Свой первый альбом «К сожалению, это трап»'+ #13 +'он выпустил в 2019. После его'+ #13 +'выхода Жоас выступал с рэперами'+ #13 +'в столичных клубах, исполняя песни'+ #13 +'дуэтом. В конце 2020 он выпустил'+ #13 +'сольную песню «Black air force».'+ #13 +'В марте рэпер выпустил альбом'+ #13 +'NO BANG! HOLD ON! Записывать пластинку'+ #13 +'артист начал осенью 2020'+ #13 +'года. В диск вошли 15 треков,'+ #13 +'из которых современной молодежи'+ #13 +'особо понравились песни vodila,'+ #13 +'«макинтош бизнес онли» и Rock.'+ #13 +'В августе Жоас объединился в'+ #13 +'творческом трио с Aarne и Anikv,'+ #13 +'чтобы подарить слушателям трек'+ #13 +'«Тесно», а затем вместе с MAYOT'+ #13 +'выпустил композицию «В хлам».';
+label5.Caption:='САМЫЙ ПОПУЛЯРНЫЙ' +#13+ '              ТРЕК';
+end;
+
+end.

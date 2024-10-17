@@ -1,0 +1,94 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm2 = class(TForm)
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
+    procedure Label4Click(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
+    procedure Label7Click(Sender: TObject);
+    procedure Label8Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10;
+
+
+
+procedure TForm2.Label1Click(Sender: TObject);
+begin
+form3.Show;
+end;
+
+procedure TForm2.Label2Click(Sender: TObject);
+begin
+form4.Show;
+end;
+
+procedure TForm2.Label3Click(Sender: TObject);
+begin
+form5.Show;
+end;
+
+procedure TForm2.Label4Click(Sender: TObject);
+begin
+form6.Show;
+end;
+
+procedure TForm2.Label5Click(Sender: TObject);
+begin
+form7.Show;
+end;
+
+procedure TForm2.Label6Click(Sender: TObject);
+begin
+form8.Show;
+end;
+
+procedure TForm2.Label7Click(Sender: TObject);
+begin
+form9.Show;
+end;
+
+procedure TForm2.Label8Click(Sender: TObject);
+begin
+form10.Show;
+end;
+
+procedure TForm2.SpeedButton1Click(Sender: TObject);
+begin
+form1.show;
+form2.hide;
+end;
+
+end.

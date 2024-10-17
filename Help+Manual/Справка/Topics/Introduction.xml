@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2024-06-16T16:17:42.406+03:00" lasteditedby="Kamilla" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Общие сведения</title>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text style="font-family:&apos;Times New Roman&apos;;">Общие сведения</text></para>
+    </header>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px; line-height:1.00; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><text styleclass="" style="font-family:&apos;Times New Roman&apos;; font-size:14pt; color:#000000;">Это справка к познавательному приложению &quot;Русский Рэп&quot;. В дданной справке Вы можете ознакомиться с правильным и удобным использованием приложения &quot;Русский Рэп&quot;. Здесь Вы пожете ознакомиться с информацией по использованию приложения, узнать подробнее о программе и об авторе программного продукта.</text></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px; line-height:1.00; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><link displaytype="text" defaultstyle="true" type="topiclink" href="Welcome-topic" styleclass="" style="font-family:&apos;Times New Roman&apos;; font-size:14pt; color:#000000;">О приложении</link><text styleclass="" style="font-family:&apos;Times New Roman&apos;; font-size:14pt; color:#000000;">&#32;</text></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px; line-height:1.00; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"><link displaytype="text" defaultstyle="true" type="topiclink" href="Second-topic" styleclass="" style="font-family:&apos;Times New Roman&apos;; font-size:14pt; color:#000000;">Об авторе</link></para>
+    <para styleclass="" style="text-align:left; text-indent:0px; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px; line-height:1.00; background-color:transparent; white-space:normal; page-break-inside:auto; page-break-after:auto; border:none; tabstops:none;"></para>
+  </body>
+</topic>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XInclude">
+  <topicref type="topic" id="454573726898155" build="ALL" modified="2024-06-14T12:16:27.687Z" icon="0" href="Introduction">
+    <caption translate="true">Общие сведения</caption>
+    <topicref type="topic" id="454576398526167" build="ALL" modified="2024-06-16T16:18:48.027Z" icon="0" href="Welcome-topic">
+      <caption translate="true">О программе</caption>
+    </topicref>
+    <topicref type="topic" id="454574940117101" build="ALL" modified="2024-06-14T13:02:53.566Z" icon="0" href="Second-topic">
+      <caption translate="true">Об авторе</caption>
+    </topicref>
+  </topicref>
+  <topicref type="topic" id="45456407504361" build="ALL" modified="2024-06-14T13:25:21.253Z" icon="0" href="Chapter-2">
+    <caption translate="true">Руководство к применению</caption>
+    <topicref type="topic" id="454577420106339" build="ALL" modified="2024-06-14T13:51:32.848Z" icon="0" href="New2">
+      <caption translate="true">Пройти тест</caption>
+    </topicref>
+    <topicref type="topic" id="454590576006417" build="ALL" modified="2024-06-15T20:30:03.913Z" icon="0" href="New">
+      <caption translate="true">Стрелка &quot;Далее&quot;</caption>
+    </topicref>
+  </topicref>
+</map>

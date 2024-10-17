@@ -1,0 +1,69 @@
+unit Unit7;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm7 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form7: TForm7;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2, Unit6, Unit8;
+
+procedure TForm7.FormActivate(Sender: TObject);
+begin
+if Form7.Visible then
+Label2.Caption:='Популярный российский' + #13 +  'певец и рэп исполнитель';
+Label4.Caption:='В 2020 году, Уланс выпустил две'+ #13 +'новые работы «Шенген» и «Логан».'+ #13 +'Спустя год вернулся с синглом'+ #13 +'«Матильда», однако полный альбом'+ #13 +'в 2020 не был выпущен. В 2022 году'+ #13 +'музыкант продолжил радовать всех.'+ #13 +'В последующих песнях «MB» и «4ДНЯ»'+ #13 +'артист, продолжил описывать в своем'+ #13 +'стиле красивую жизнь. Дополнением'+ #13 +'стал клип с красным «Феррари» на'+ #13 +'трек «4ДНЯ» В январе 2023 года'+ #13 +'Уланс представил клип на трек'+ #13 +'«Я буду», премьера которой '+ #13 +'прошла в конце предыдущего года.'+ #13 +'Далее он выпустил две работы'+ #13 +'«CSM» и «Три буквы», вторая стала'+ #13 +'совместной работой с Платиной.'+ #13 +'Работы вошли в его альбом Kristina.';
+label5.Caption:='САМЫЙ ПОПУЛЯРНЫЙ' +#13+ '              ТРЕК';
+end;
+
+procedure TForm7.SpeedButton1Click(Sender: TObject);
+begin
+form6.show;
+form7.hide;
+end;
+
+procedure TForm7.SpeedButton2Click(Sender: TObject);
+begin
+form8.show;
+form7.hide;
+end;
+
+procedure TForm7.SpeedButton3Click(Sender: TObject);
+begin
+form7.hide;
+form2.show;
+end;
+
+end.

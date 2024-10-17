@@ -1,0 +1,40 @@
+unit Unit11;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm11 = class(TForm)
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
+    SpeedButton1: TSpeedButton;
+    Label3: TLabel;
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form11: TForm11;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm11.FormActivate(Sender: TObject);
+begin
+if form11.visible then
+label1.Caption:='              ПРЕДЛАГАЮ ПРОЙТИ ТЕСТ ДЛЯ' +#13+ '        САМОКОНТРОЛЯ ПОЛУЧЕННЫХ ЗНАНИЙ';
+label2.Caption:='Итак, определимся с уровнем сложности, насколько хорошо Вы усвоили материал?';
+end;
+
+end.

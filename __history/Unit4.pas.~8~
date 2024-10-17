@@ -1,0 +1,72 @@
+unit Unit4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm4 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit5, Unit2;
+
+
+
+procedure TForm4.FormActivate(Sender: TObject);
+begin
+if Form4.Visible then
+Label2.Caption:='Популярный российский' + #13 +  'певец и рэп исполнитель';
+Label4.Caption:='В  2017  году  Влад  сменил  свой никнейм' + #13 + 'и   продолжал   работать   как   Soda Luv.' + #13 + 'Под  этим  псевдонимом  он  выпустил' + #13 + '2  трека  Ой, прости, не тебе  и  КАК!ТАК?.' + #13 + 'Следующий   свой   альбом   он   написал' + #13 + '«Perfect Blue»,  который  вышел  в  2018' + #13 + 'году. Популярность  к Soda Luv  пришла' + #13 + 'после выхода альбома «Ничего Личного»,' + #13 + 'который  собрал  много  прослушиваний.' + #13 + 'Далее появились треки Ognocap, Рататуй,' + #13 + 'которые принесли популярность и новых' + #13 + 'слушателей. Вышел альбом «VIVA LA VIDA».' + #13 +  'Как рассказал Влад, песни были записаны' + #13 + '2 года назад. Альбом был выпущен на всех' + #13 + 'площадках  и  прослушан  более  4 млн. раз.' + #13 + 'А с Bushido Zho была записана песня «Коми».';
+label5.Caption:='САМЫЙ ПОПУЛЯРНЫЙ' +#13+ '              ТРЕК';
+end;
+
+procedure TForm4.SpeedButton1Click(Sender: TObject);
+begin
+form3.show;
+form4.hide;
+end;
+
+procedure TForm4.SpeedButton2Click(Sender: TObject);
+begin
+form5.show;
+form4.hide;
+end;
+
+procedure TForm4.SpeedButton3Click(Sender: TObject);
+begin
+form4.hide;
+form2.show;
+end;
+
+end.

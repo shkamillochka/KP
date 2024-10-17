@@ -1,0 +1,98 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls, Vcl.Buttons, Vcl.MPlayer, shellAPI, Vcl.Menus;
+
+type
+  TForm3 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Image3: TImage;
+    Label5: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    MediaPlayer1: TMediaPlayer;
+    Memo1: TMemo;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2, Unit4, Unit1;
+
+
+
+procedure TForm3.FormActivate(Sender: TObject);
+begin
+if Form3.visible then
+label2.Caption:='Популярный российский' + #13 +  'певец и рэп исполнитель';
+//label4.Caption:='Федук, рэп-исполнитель с многолетним' +#13+ 'опытом, смог завоевать сердца' + #13 + 'поклонников своей музыкой и талантом' + #13 + 'Его альбом "Всего лишь игра стал' + #13 + 'настоящим прорывом в российской' + #13 + 'рэп-индустрии и принес ему популярность' + #13 + 'Хиты "Моряк" и "Смех без правил"' + #13 + 'безусловно стали самыми известными' + #13 + 'В 2021 году Федук выпустил мини-альбом' + #13 + '«Заново». Одной из четырех песен стала' + #13 + 'совместная с певицей Дорой «Поздно».' + #13 + 'Федук рассказывал, что у него накопился' + #13 + 'такой «околороковый» материал' + #13 + 'Так же ообещал, что полноценный' + #13 + 'альбом обязательно выйдет в 2022 году.';
+label5.Caption:='САМЫЙ ПОПУЛЯРНЫЙ' +#13+ '              ТРЕК';
+end;
+
+
+procedure TForm3.N1Click(Sender: TObject);
+begin
+ShellExecute(0, PChar ('Open'), PChar ('Справка.chm'), nil, nil, SW_SHOW);
+end;
+
+procedure TForm3.N2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm3.SpeedButton1Click(Sender: TObject);
+begin
+  mediaplayer1.AutoOpen:=true;
+  MediaPlayer1.Play;
+end;
+
+procedure TForm3.SpeedButton2Click(Sender: TObject);
+begin
+Mediaplayer1.Close;
+form4.show;
+form3.hide;
+end;
+
+procedure TForm3.SpeedButton3Click(Sender: TObject);
+begin
+Mediaplayer1.Close;
+form3.hide;
+form2.show;
+end;
+
+procedure TForm3.SpeedButton4Click(Sender: TObject);
+begin
+form3.hide;
+form2.show;
+end;
+
+end.
+
